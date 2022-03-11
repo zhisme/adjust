@@ -1,0 +1,46 @@
+<div class="row" style="margin-top:20px;">
+  <div class="col-3"></div>
+  <div class="col-6">
+    <div class="card text-center">
+      <div class="card-header">
+        Featured
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"> Find repository </h5>
+        <%= form_with url: repositories_path, method: :get do |form| %>
+          <div class="mb-3">
+            <%= form.text_field :q, id: 'repository-q', class: 'form-control' %>
+          </div>
+
+          <%= form.submit "Submit", class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+      <div class="card-footer text-muted">
+        Developed for Adjust
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="row" style="margin-top:10px;">
+  <div class="col-5"></div>
+  <div class="col-3">
+    <div class="card" style="width: 18rem;">
+      <% if repositories.any? %>
+        <ul class="list-group list-group-flush">
+          <% repositories.each do |repo| %>
+            <li class="list-group-item">
+              <a href="<%= repo.url %>" title="<%= repo.full_name %>">
+                <%= repo.name %>
+              </a>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <span class="list-group-item">
+          Nothing found.
+        </span>
+      <% end %>
+    </div>
+  </div>
+</div>
