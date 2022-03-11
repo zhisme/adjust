@@ -11,5 +11,5 @@
   * `open http://localhost:3000`
 
 ### Docker:
-  * `doker build . -t adjust`
-  * `docker run -e RAILS_SERVE_STATIC_FILES=1 -p 3000:80 adjust`
+  * `docker build . -t adjust`
+  * `docker run -e SECRET_KEY_BASE=xxx RAILS_SERVE_STATIC_FILES=1 -p 3000:80 adjust`
