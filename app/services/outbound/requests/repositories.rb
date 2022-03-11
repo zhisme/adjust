@@ -20,8 +20,14 @@ module Outbound
       end
 
       def call
-        options = { request_type: REQUEST_TYPE, url: url }
-        @response = @client.call(options)
+        if cache_exist?
+          cached_response
+        else
+          options = { request_type: REQUEST_TYPE, url: url }
+          @response = @client.call(options)
+          cache_response!
+          response
+        end
       end
 
       private

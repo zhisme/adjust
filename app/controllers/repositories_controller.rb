@@ -2,6 +2,7 @@
 
 class RepositoriesController < ApplicationController
   attr_reader :repositories
+
   helper_method :repositories
 
   def index

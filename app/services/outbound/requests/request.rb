@@ -19,12 +19,16 @@ module Outbound
       end
 
       module Caching
-        def cached_response_body
-          raise ImplementMe
+        def cached_response
+          OpenStruct.new(body: CachingService.get(params))
         end
 
-        def cache_response_body!
-          raise ImplementMe
+        def cache_exist?
+          CachingService.get(params).present?
+        end
+
+        def cache_response!
+          CachingService.set(params, response.env.response_body)
         end
       end
     end

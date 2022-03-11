@@ -5,11 +5,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.1'
 
-gem 'bootstrap',  '~> 5.1.3'
-gem 'dry-struct', '~> 1.4'
-gem 'faraday',    '~> 2.2'
-gem 'puma',       '~> 5.0'
-gem 'rails',      '~> 7.0.2', '>= 7.0.2.3'
+gem 'bootstrap',       '~> 5.1.3'
+gem 'dry-struct',      '~> 1.4'
+gem 'faraday',         '~> 2.2'
+gem 'puma',            '~> 5.0'
+gem 'rails',           '~> 7.0.2', '>= 7.0.2.3'
+gem 'redis',           '~> 4.4.0'
+gem 'redis-namespace', '~> 1.8.2'
 
 group :development, :test do
   gem 'byebug',      '~> 11.1.3'

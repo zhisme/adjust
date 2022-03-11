@@ -3,6 +3,10 @@ require: rubocop-rails
 Style/Documentation:
   Enabled: false
 
+Style/GlobalVars:
+  Exclude:
+    - 'config/initializers/*'
+
 AllCops:
   Exclude:
     - 'bin/*'
