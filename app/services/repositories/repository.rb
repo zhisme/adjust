@@ -2,14 +2,15 @@
 
 module Repositories
   class Repository
-    attr_reader :items, :includes, :params
+    attr_reader :items, :params
 
     def initialize(params = {})
       @params = params
-      @items = parse(api_response)
+      @items = []
     end
 
     def all
+      @items = parse(api_response)
       create_entities
     end
 
