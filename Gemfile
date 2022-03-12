@@ -7,10 +7,10 @@ ruby '2.7.1'
 
 gem 'bootstrap',       '~> 5.1.3'
 gem 'dry-struct',      '~> 1.4'
+gem 'fakeredis',       '~> 0.8.0'
 gem 'faraday',         '~> 2.2'
 gem 'puma',            '~> 5.0'
 gem 'rails',           '~> 7.0.2', '>= 7.0.2.3'
-gem 'fakeredis',       '~> 0.8.0'
 
 group :development, :test do
   gem 'byebug',      '~> 11.1.3'

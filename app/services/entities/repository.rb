@@ -14,7 +14,7 @@ module Entities
     def self.wrap_entity(item)
       new(
         id: item['id'],
-        name: item['full_name'],
+        name: item['name'],
         full_name: item['full_name'],
         url: item['url']
       )

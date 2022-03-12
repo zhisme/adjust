@@ -2,19 +2,21 @@
 
 module Repositories
   class Repository
-    attr_reader :items, :params
+    attr_reader :params
 
     def initialize(params = {})
       @params = params
-      @items = []
     end
 
     def all
-      @items = parse(api_response)
       create_entities
     end
 
     private
+
+    def fetch
+      parse(api_response)
+    end
 
     def api_response
       all_api_getway.call.body
@@ -29,7 +31,7 @@ module Repositories
     end
 
     def create_entities
-      items.map do |item|
+      fetch.map do |item|
         create_repository(item)
       end
     end

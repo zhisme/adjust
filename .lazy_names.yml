@@ -1,0 +1,5 @@
+---
+adjust:
+  definitions:
+    'Entities::Repository': 'EnRep'
+    'Repositories::Repository': 'RRep'
